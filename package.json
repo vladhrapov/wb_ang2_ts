@@ -1,0 +1,23 @@
+{
+  "name": "ts_webpack_angular2",
+  "version": "1.0.0",
+  "description": "ts_webpack_angular2",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^1.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladhrapov/wb_ang2_ts.git"
+  },
+  "author": "VK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladhrapov/wb_ang2_ts/issues"
+  },
+  "homepage": "https://github.com/vladhrapov/wb_ang2_ts#readme"
+}
