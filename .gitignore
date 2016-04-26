@@ -12,6 +12,8 @@ bin-release/
 
 # Debug & log files
 *.log
+*.map
 
 # Folders
 node_modules
+public
