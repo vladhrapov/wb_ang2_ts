@@ -1,6 +1,7 @@
 "use strict";
 
 var path = require("path");
+var webpack = require("webpack");
 
 module.exports = {
   entry: "./app/boot.ts",
@@ -9,6 +10,10 @@ module.exports = {
     path: path.join(__dirname, '/public'),
     filename: "bundle.js"
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   resolve: {
     extensions: ["", ".js", ".ts"]
   },

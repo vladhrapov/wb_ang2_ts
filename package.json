@@ -4,21 +4,20 @@
   "description": "ts_webpack_angular2",
   "main": "index.js",
   "dependencies": {
-    "angular2": "^2.0.0-beta.15",
+    "angular2": "^2.0.0-beta.17",
     "es6-promises": "^1.0.10",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "^5.0.0-beta.6",
     "ts-loader": "^0.8.2",
-    "tsd": "^0.6.5",
-    "typescript": "^1.8.10",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
     "zone.js": "^0.6.12"
   },
   "devDependencies": {},
   "scripts": {
-    "build": "node node_modules/webpack/bin/webpack.js",
+    "start": "node_modules/.bin/webpack-dev-server",
+    "build": "node_modules/.bin/webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
