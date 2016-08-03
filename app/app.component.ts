@@ -23,7 +23,7 @@ import {FruitListComponent} from "./components/fruit-list/fruit-list.component";
               color: red;
             }
             .myDiv {
-              font-size: 50px;
+              font-size: 40px;
             }
           `]
 })
@@ -34,7 +34,7 @@ export class AppComponent {
 
   constructor() {
     this.toggler = true;
-    this.myPadding = 89;
+    this.myPadding = 19;
   }
 
   public toggle(): void {

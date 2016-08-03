@@ -4,7 +4,13 @@ var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
-  entry: "./app/boot.ts",
+  entry: {
+      bundle: [
+          'webpack-dev-server/client?http://localhost:8080',
+          'webpack/hot/dev-server',
+          './app/boot.ts'
+      ]
+  },
   output: {
     publicPath: '/public/',
     path: path.join(__dirname, '/public'),
