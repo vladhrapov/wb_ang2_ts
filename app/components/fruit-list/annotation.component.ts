@@ -5,7 +5,7 @@ import {Component, Input, Output} from "angular2/core";
   //inputs: ["myFruit"],
   template: `
               <div>
-                <b>My fruit is {{myFruit}}</b>
+                <b *ngIf="selectedFruit">My fruit is {{myFruit}}</b>
               </div>
             `,
 })
@@ -14,6 +14,10 @@ export default class AnnotationComponent {
   @Input() myFruit: string;
 
   constructor() {
+  }
+
+  helloFromChild() {
+    alert("Call child from parent");
   }
 
 }

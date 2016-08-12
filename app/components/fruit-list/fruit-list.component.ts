@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, ViewChild} from "angular2/core";
 import FruitListService from "./fruit-list.service";
 import AnnotationComponent from "./annotation.component";
 
@@ -10,8 +10,8 @@ import AnnotationComponent from "./annotation.component";
               <ul>
                 <li *ngFor="let fruit of fruits" (click)="selectFruit(fruit)">{{fruit}}</li>
               </ul>
-
-              <annotation *ngIf="selectedFruit" [myFruit]="selectedFruit"></annotation>
+              <annotation [myFruit]="selectedFruit"></annotation>
+              <button type="button" (click)="callHelloChild()">Call child</button>
             `,
 })
 
@@ -19,6 +19,7 @@ export class FruitListComponent {
   public fruits: Array<string>;
   private selectedFruit: string;
   private fruitListService: FruitListService;
+  @ViewChild(AnnotationComponent) annotationComponent: AnnotationComponent;
 
   constructor(fruitListService: FruitListService) {
     this.fruitListService = fruitListService;
@@ -28,6 +29,10 @@ export class FruitListComponent {
   selectFruit(fruit: string) {
     alert(fruit);
     this.selectedFruit = fruit;
+  }
+
+  callHelloChild() {
+    this.annotationComponent.helloFromChild();
   }
 
 }

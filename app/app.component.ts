@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, Input} from "angular2/core";
 import {FruitListComponent} from "./components/fruit-list/fruit-list.component";
 
 @Component({
@@ -31,10 +31,12 @@ import {FruitListComponent} from "./components/fruit-list/fruit-list.component";
 export class AppComponent {
   public toggler: boolean;
   public myPadding: number;
+  @Input() name: string;
 
   constructor() {
     this.toggler = true;
     this.myPadding = 19;
+    this.name = "123123";
   }
 
   public toggle(): void {
