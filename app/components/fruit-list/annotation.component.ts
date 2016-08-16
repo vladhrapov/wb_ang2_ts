@@ -1,11 +1,13 @@
 import {Component, Input, Output} from "angular2/core";
+import ExclamationMarkPipe from "./annotation.pipe";
 
 @Component({
   selector: "annotation",
   //inputs: ["myFruit"],
+  pipes: [ExclamationMarkPipe],
   template: `
               <div>
-                <b *ngIf="selectedFruit">My fruit is {{myFruit}}</b>
+                <b *ngIf="myFruit">My fruit is {{myFruit | exclamationMark:20 }}</b>
               </div>
             `,
 })
