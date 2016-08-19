@@ -1,29 +1,35 @@
-import { Component } from "angular2/core";
+import { Component, OnInit } from "angular2/core";
 import PeopleService, { Human } from "./people.service";
 
 @Component({
   selector: "people",
   providers: [PeopleService],
-  // directives: [AnnotationComponent],
   template: `
               <ul>
-                <li *ngFor="let fruit of fruits" (click)="selectFruit(fruit)">{{fruit}}</li>
+                <li *ngFor="let person of people">{{person.name}}</li>
               </ul>
-              <button type="button" (click)="callHelloChild()">Call child</button>
             `,
 })
 
-export class PeopleComponent {
+export class PeopleComponent implements OnInit {
   public people: Array<Human>;
-  private selectedFruit: string;
   private peopleService: PeopleService;
 
   constructor(peopleService: PeopleService) {
     this.peopleService = peopleService;
-    this.people = this.peopleService.getPeople();
-    console.log(this.people);
   }
 
+  ngOnInit() {
+    this.getPeople();
+  }
 
+  getPeople() {
+    this.peopleService
+      .getPeople()
+      .subscribe(people => {
+        this.people = people;
+        console.log(this.people);
+      });
+  }
 
 }

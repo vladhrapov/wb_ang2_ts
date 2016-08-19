@@ -1,4 +1,7 @@
-import { Injectable, Http, Response } from "angular2/core";
+import { Injectable } from "angular2/core";
+import { Http, Request, Response } from "angular2/http";
+import {Observable} from 'rxjs/Rx';
+
 
 @Injectable()
 export default class PeopleService {
@@ -11,6 +14,12 @@ export default class PeopleService {
       .map((response: Response) => {
         return <Human[]>response.json().data
       })
+      .catch(this.handleError);
+  }
+
+  handleError(error: Response) {
+    console.log(error);
+    return Observable.throw(error.json().error || "Server error");
   }
 }
 

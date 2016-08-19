@@ -1,9 +1,15 @@
-import {Component, Input} from "angular2/core";
-import {FruitListComponent} from "./components/fruit-list/fruit-list.component";
+import { Component, Input } from "angular2/core";
+import { HTTP_PROVIDERS } from "angular2/http";
+import { FruitListComponent } from "./components/fruit-list/fruit-list.component";
+import { PeopleComponent } from "./components/people/people.component";
+
 
 @Component({
   selector: "my-app",
-  directives: [FruitListComponent],
+  directives: [FruitListComponent, PeopleComponent],
+  providers: [
+    HTTP_PROVIDERS
+  ],
   template: `
               <h1 class="red">Hello World Component</h1>
               <ul>
@@ -17,6 +23,7 @@ import {FruitListComponent} from "./components/fruit-list/fruit-list.component";
                 <input type="text" [(ngModel)]="name" />
                 <span>{{name}}</span>
               </p>
+              <people></people>
             `,
   styles: [`
             .red {
